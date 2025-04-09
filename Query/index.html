@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>ArcGIS Maps SDK for JavaScript Tutorials: Layers</title>
+
+    <!-- Load Calcite components from CDN -->
+    <script
+      type="module"
+      src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"
+    ></script>
+
+    <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.32/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.32/"></script>
+
+    <!-- Load Map components from CDN-->
+    <script
+      type="module"
+      src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"
+    ></script>
+  </head>
+
+  <body>
+    <arcgis-map
+      basemap="arcgis/topographic"
+      center="-118.805, 34.027"
+      zoom="13"
+    >
+      <arcgis-zoom position="top-left"></arcgis-zoom>
+      <arcgis-sketch
+        creation-mode="update"
+        position="top-right"
+      ></arcgis-sketch>
+      <arcgis-placement position="top-right">
+        <calcite-select id="queryTypeSelect" label="Choose query type">
+          <calcite-option value="sql" label="SQL Query"></calcite-option>
+          <calcite-option
+            value="spatial"
+            label="Spatial Query"
+          ></calcite-option>
+          <calcite-option value="filter" label="SQL Filter"></calcite-option>
+        </calcite-select>
+        <calcite-select id="sqlSelect">
+          <calcite-option
+            id="defaultOption"
+            value="1=0"
+            label="Choose a SQL where clause..."
+          ></calcite-option>
+          <calcite-option
+            value="UseType = 'Residential'"
+            label="UseType = 'Residential'"
+          ></calcite-option>
+          <calcite-option
+            value="UseType = 'Government'"
+            label="UseType = 'Government'"
+          ></calcite-option>
+          <calcite-option
+            value="UseType = 'Irrigated Farm'"
+            label="UseType = 'Irrigated Farm'"
+          ></calcite-option>
+          <calcite-option
+            value="TaxRateArea = 10853"
+            label="TaxRateArea = 10853"
+          ></calcite-option>
+          <calcite-option
+            value="TaxRateArea = 10860"
+            label="TaxRateArea = 10860"
+          ></calcite-option>
+          <calcite-option
+            value="TaxRateArea = 08637"
+            label="TaxRateArea = 08637"
+          ></calcite-option>
+          <calcite-option
+            value="Roll_LandValue > 1000000"
+            label="Roll_LandValue > 1000000"
+          ></calcite-option>
+        </calcite-select>
+        <calcite-select id="sqlSelect">
+          <calcite-option
+            value="1=0"
+            label="Choose a SQL where clause..."
+          ></calcite-option>
+          <calcite-option
+            value="TaxRateArea = 10853"
+            label="TaxRateArea = 10853"
+          ></calcite-option>
+          <calcite-option
+            value="Bedrooms5 > 0"
+            label="Bedrooms5 > 0"
+          ></calcite-option>
+          <calcite-option
+            value="UseType = 'Residential'"
+            label="UseType = 'Residential'"
+          ></calcite-option>
+          <calcite-option
+            value="Roll_RealEstateExemp > 0"
+            label="Roll_RealEstateExemp > 0"
+          ></calcite-option>
+        </calcite-select>
+      </arcgis-placement>
+    </arcgis-map>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
